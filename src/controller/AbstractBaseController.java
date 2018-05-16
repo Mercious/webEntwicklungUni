@@ -9,6 +9,7 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Collection;
 
 
 public abstract class AbstractBaseController extends HttpServlet {
@@ -20,5 +21,13 @@ public abstract class AbstractBaseController extends HttpServlet {
         HeaderBean headerBean = new HeaderBean();
         headerBean.setUserLoggedIn(true);
         request.setAttribute("headerBean", headerBean);
+    }
+
+    protected void addErrorMessages(final HttpServletRequest request, String... messages) {
+
+    }
+
+    protected void addErrorMessages(final HttpServletRequest request, Collection<String> messages) {
+
     }
 }

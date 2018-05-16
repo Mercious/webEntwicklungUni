@@ -5,13 +5,16 @@ import daos.UserDAO;
 
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
+import javax.ejb.Stateless;
+import javax.inject.Inject;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 
 
+@Stateless
 public class UserService {
-    // assume DI
+    @Inject
     private UserDAO userDAO;
 
     public boolean loginUser(final String userName, final String password) {

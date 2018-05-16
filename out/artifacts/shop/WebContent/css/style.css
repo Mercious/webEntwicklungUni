@@ -11,13 +11,31 @@ button {
   width: 150px;
   color: white;
   background: #e8491d;
-  padding: 2px;
+  padding: 5px;
+  display: inline-block;
+  border: 0;
+  margin-top: 5px;
+}
+
+ul {
+  list-style-position: inside;
+}
+
+input, label {
+  display: block;
+  width: 100%;
+}
+
+h3 {
+  margin: 5px 0 5px 0;
 }
 
 /* Global */
 .container{
   width:80%;
   margin:10px auto 0 auto;
+  padding-bottom: 5px;
+  padding-left: 3px;
 }
 
 
@@ -86,15 +104,12 @@ header a:hover{
   font-weight:bolder;
 }
 
-
-
-
 footer{
   padding:0px;
   color:#ffffff;
   background-color:#e8491d; 
   text-align: center;
-  border-top:#35424a 3px solid; 
+  border-top:#35424a 3px solid;
   position: fixed;
   bottom: 0px;
   width: 100%;
@@ -103,22 +118,8 @@ footer{
   
 }
 
-#registerClaim, #registerToggle{
-  display:inline-block;
-}
-
-#loginform, #registerform {
-  float:left;
-  margin-right: 10px;
-  margin-left: 10px;
-}
-
 .hide {
   visibility: hidden;
-}
-
-form {
-  margin-left: 10px
 }
 
 .articleTeaser {
@@ -134,11 +135,16 @@ form {
   padding: 0;
   vertical-align: top;
   overflow: hidden;
+  position: relative;
 }
 
 /* No margin for the last child*/
 .articleTeaser:last-child {
   margin-right: 0;
+}
+
+.articleTeaser button {
+  margin-top: 0;
 }
 
 .headline {
@@ -157,9 +163,10 @@ form {
   font-size: 15px;
   font-weight: bold;
   height: 20px;
-  width: 150px;
+  width: 147px;
   text-align: right;
   margin-top: 20px;
+  padding-right: 3px;
 }
 
 .teaserName {
@@ -169,6 +176,67 @@ form {
 
 .right {
   float: right;
+}
+
+.left {
+  float: left;
+}
+
+.icon {
+  margin: 3px auto 0 10px;
+}
+
+
+.lightbox {
+  display: none;
+  z-index: 1;
+  width: 100%;
+  height: max-content;
+  background-color: grey;
+  position: absolute;
+  bottom: 30%;
+  box-shadow: lightgrey;
+  padding: 2px;
+}
+
+.redText {
+  color: red;
+}
+
+.greenText {
+  color: green;
+}
+
+.orangeText {
+  color: #e8491d;
+}
+
+.greyText {
+  color: grey;
+}
+
+.loginRegisterTeaser {
+  width: 400px;
+  height: 230px;
+  background: lightgrey;
+  margin: 0 20px 0 0;
+  display: inline-block;
+  padding: 20px 5px 5px 5px;
+  vertical-align: top;
+  border: 1px #35424a solid;
+  position: relative;
+}
+
+.loginRegisterTeaser button {
+  position: absolute;
+  bottom: 5px;
+  right: 5px;
+}
+
+.loginboxText {
+  border-bottom: 1.5px grey solid;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 
