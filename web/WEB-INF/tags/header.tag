@@ -10,7 +10,7 @@
                 <li><a href="/shop/">Startseite</a></li>
                 <li><a href="xxxxx">PC-Konfigurator</a></li>
                 <li><a href="contact">Kontakt</a></li>
-                <c:if test="${not not headerBean.userLoggedIn}">
+                <c:if test="${not headerBean.userLoggedIn}">
                     <li><a href="loginRegister">Registrieren</a></li>
                     <li><a href="loginRegister">Anmelden</a></li>
                 </c:if>

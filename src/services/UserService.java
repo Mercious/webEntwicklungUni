@@ -1,6 +1,8 @@
 package services;
 
+import beans.User;
 import beans.UserRegisterBean;
+import beans.UserSessionBean;
 import daos.UserDAO;
 
 import javax.crypto.SecretKeyFactory;
@@ -27,7 +29,7 @@ public class UserService {
     }
 
     private String hashPassword(final String password) {
-        KeySpec keySpec = new PBEKeySpec(password.toCharArray(), "someSalt".getBytes(), 1000);
+        KeySpec keySpec = new PBEKeySpec(password.toCharArray(), "someSalt".getBytes(), 65536, 256);
         try {
             SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
             return new String(secretKeyFactory.generateSecret(keySpec).getEncoded());
@@ -36,5 +38,14 @@ public class UserService {
             // LOG some ERROR
             return "";
         }
+    }
+
+    public UserSessionBean getUserSessionData(final String userID) {
+        User user = userDAO.getUser(userID);
+        UserSessionBean userSessionBean = new UserSessionBean();
+        userSessionBean.setFirstName(user.getFirstName());
+        userSessionBean.setLastName(user.getLastName());
+        userSessionBean.setUserID(user.geteMail());
+        return userSessionBean;
     }
 }

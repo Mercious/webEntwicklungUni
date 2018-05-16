@@ -239,4 +239,10 @@ footer{
   margin-top: 10px;
 }
 
+.errorMessage {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 

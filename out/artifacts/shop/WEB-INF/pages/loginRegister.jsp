@@ -1,5 +1,8 @@
 <%@taglib prefix="custom" tagdir="/WEB-INF/tags" %>
 <custom:pageWithFooterHeader>
+    <div class="container">
+        <custom:errorMessages/>
+    </div>
     <div class="container white">
         <h2 class="orangeText">Login / Registrierung</h2>
         Hier können Sie sich entweder mit Ihren bereits vorhandenen Kundendaten einloggen oder kostenlos einen neuen Account anlegen!
@@ -7,11 +10,11 @@
         <div id="loginArea" class="loginRegisterTeaser">
             <h3>Ich bin bereits Kunde!</h3>
             <div class="loginboxText greyText">Dann geben melden Sie sich bitte mit ihren Login-Daten hier an:</div>
-            <form id="loginform">
+            <form id="loginform" action="/shop/loginRegister" method="post">
                 <label for="eMail">E-Mail Adresse:</label>
-                <input id="eMail"/>
+                <input id="eMail" name="eMail" required pattern=".{4,}"/>
                 <label for="password">Passwort:</label>
-                <input id="password"/>
+                <input id="password" name="password" required pattern=".{6,}"/>
                 <button type="submit">Anmelden</button>
             </form>
         </div>

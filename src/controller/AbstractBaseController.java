@@ -9,7 +9,10 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
 
 
 public abstract class AbstractBaseController extends HttpServlet {
@@ -24,10 +27,10 @@ public abstract class AbstractBaseController extends HttpServlet {
     }
 
     protected void addErrorMessages(final HttpServletRequest request, String... messages) {
-
+        request.setAttribute("errorMessages", Arrays.asList(messages));
     }
 
-    protected void addErrorMessages(final HttpServletRequest request, Collection<String> messages) {
-
+    protected void addErrorMessages(final HttpServletRequest request, List<String> messages) {
+        request.setAttribute("errorMessages", messages);
     }
 }
