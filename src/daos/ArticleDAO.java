@@ -60,4 +60,26 @@ public class ArticleDAO extends AbstractBaseDAO {
 
     }
 
+    public List<ArticleBean> searchForArticle(final String searchTerm) {
+        Connection connection = null;
+        try {
+            connection = this.dataSource.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM artikel WHERE Beschreibung LIKE ?");
+            preparedStatement.setString(1, "%" + searchTerm + "%");
+            ResultSet results = preparedStatement.executeQuery();
+            List<ArticleBean> resultList = new ArrayList<>();
+            while (results.next()) {
+                resultList.add(new ArticleBean(results.getString("Beschreibung"),
+                        results.getString("Artikelnummer"), results.getDouble("Preis")));
+            }
+
+            return resultList;
+
+        } catch (SQLException e) {
+            return null;
+        } finally {
+            closeConnection(connection);
+        }
+    }
+
 }

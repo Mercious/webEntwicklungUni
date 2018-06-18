@@ -1,16 +1,30 @@
 package beans;
 
-public class UserSessionBean {
-    private String userID;
+import java.io.Serializable;
+
+public class UserSessionBean implements Serializable {
+    private String eMail;
     private String firstName;
     private String lastName;
 
-    public String getUserID() {
-        return userID;
+    public UserSessionBean() {
+        eMail = "";
+        firstName = "";
+        lastName = "";
     }
 
-    public void setUserID(String userID) {
-        this.userID = userID;
+    public UserSessionBean(final String firstName, final String lastName, final String eMail) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.eMail = lastName;
+    }
+
+    public String getEMail() {
+        return eMail;
+    }
+
+    public void setEMail(String eMail) {
+        this.eMail = eMail;
     }
 
     public String getFirstName() {

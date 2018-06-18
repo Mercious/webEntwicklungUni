@@ -3,6 +3,8 @@
 <%@ attribute name="articleID" required="true" type="java.lang.String"%>
 <%@ attribute name="articlePrice" required="true" type="java.lang.Double" %>
 <%@ attribute name="compStatus" required="false" type="java.lang.Boolean" %>
+
+
 <div id="article${articleID}" class="articleTeaser white">
     <img src="/shop/image?articleID=${articleID}&teaser=true" class="centeredImage"/>
     <div class="teaserName">${articleName}</div>

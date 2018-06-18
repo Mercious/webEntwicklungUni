@@ -1,10 +1,9 @@
 
 <!DOCTYPE html>
-<%@page import="java.io.PrintWriter"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="custom" tagdir="/WEB-INF/tags" %>
 
-<custom:pageWithFooterHeader>
+<custom:pageWithFooterHeader pageTitle="Home">
 	<section>
 		<div class="container white">
 			<h1> Herzlich Willkommen</h1>

@@ -55,11 +55,10 @@ ul{
 
 /* Header **/
 header{
-  padding-top:20px;
-  min-height:50px;
+  padding-top:5px;
+  min-height: 70px;
   border-bottom:#e8491d 3px solid;
   background: #e8491d;
-  max-height: 10%;
 
 }
 
@@ -72,11 +71,19 @@ header a{
 
 header li{
   float:left;
-  display:inline;
   background: #e8491d;
-  padding: 0 20px 0 20px;
+  padding-right: 50px;
+  list-style-type: none;
   
 }
+
+header li:last-child {
+  padding-right: 0;
+}
+
+header img {
+}
+
 
 
 header #header-menu h1, header .current a{
@@ -96,6 +103,7 @@ header #header-menu h1{
 header nav{
   float:right;
   margin-top:10px;
+  padding-top: 20px;
 }
 
 
@@ -109,11 +117,9 @@ footer{
   color:#ffffff;
   background-color:#e8491d; 
   text-align: center;
-  border-top:#35424a 3px solid;
-  position: fixed;
-  bottom: 0px;
+  clear: both;
   width: 100%;
-  max-height: 10%;
+  height: 10%;
   
   
 }
@@ -123,7 +129,7 @@ footer{
 }
 
 .articleTeaser {
-  height: 312px;
+  height: 270px;
   /* We want 6 of these in one line. We want a margin-right of 10px after each element but the last one. So we have a total margin of 5*10px, so each
      element has to account for 50px/6 margin in it's width. We subtract that from the 100/6 original width %.
    */
@@ -217,7 +223,7 @@ footer{
 
 .loginRegisterTeaser {
   width: 400px;
-  height: 230px;
+  height: 330px;
   background: lightgrey;
   margin: 0 20px 0 0;
   display: inline-block;
@@ -245,4 +251,31 @@ footer{
   font-size: 20px;
 }
 
+.inlineBlock {
+  display:inline-block;
+}
 
+.headerUserName {
+  vertical-align: bottom;
+  padding-bottom: 7px;
+}
+
+#registerForm {
+  display: none;
+}
+
+.searchBar {
+  float: left;
+  width: 350px;
+  height: 20px;
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
+header form {
+  display: inline-block;
+}
+
+.leftNav {
+  float: left;
+}

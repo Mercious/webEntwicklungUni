@@ -13,7 +13,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
-import java.util.Collections;
 
 @WebServlet("/loginRegister")
 public class LoginController extends AbstractBaseController {
@@ -37,7 +36,7 @@ public class LoginController extends AbstractBaseController {
             UserSessionBean userSessionBean = userService.getUserSessionData(eMail);
             HttpSession userSession = request.getSession();
             userSession.setAttribute("currentUser", userSessionBean);
-            request.getRequestDispatcher("/WEB-INF/pages/homePage.jsp").forward(request, response);
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath()));
         } else {
             addErrorMessages(request, "Fehler beim Login - E-Mail oder Passwort nicht korrekt.");
             request.getRequestDispatcher("/WEB-INF/pages/loginRegister.jsp").forward(request, response);

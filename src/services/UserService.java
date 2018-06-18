@@ -1,17 +1,12 @@
 package services;
 
 import beans.User;
-import beans.UserRegisterBean;
 import beans.UserSessionBean;
 import daos.UserDAO;
+import utils.StringUtils;
 
-import javax.crypto.SecretKeyFactory;
-import javax.crypto.spec.PBEKeySpec;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
-import java.security.NoSuchAlgorithmException;
-import java.security.spec.InvalidKeySpecException;
-import java.security.spec.KeySpec;
 
 
 @Stateless
@@ -21,23 +16,15 @@ public class UserService {
 
     public boolean loginUser(final String userName, final String password) {
         String savedPassword = this.userDAO.getPasswordForUser(userName);
-        return hashPassword(password).equals(savedPassword);
+        return StringUtils.hashPassword(password).equals(savedPassword);
     }
 
-    public boolean registerUser(final UserRegisterBean userRegisterBean) {
-        return false;
-    }
-
-    private String hashPassword(final String password) {
-        KeySpec keySpec = new PBEKeySpec(password.toCharArray(), "someSalt".getBytes(), 65536, 256);
-        try {
-            SecretKeyFactory secretKeyFactory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
-            return new String(secretKeyFactory.generateSecret(keySpec).getEncoded());
-
-        } catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-            // LOG some ERROR
-            return "";
+    public boolean registerUser(final String eMail, final String password, final String firstName, final String lastName) {
+        if(!(this.userDAO.getUser(eMail) == null)) {
+            return false;
         }
+
+        return this.userDAO.registerUser(eMail, password, firstName, lastName);
     }
 
     public UserSessionBean getUserSessionData(final String userID) {
@@ -45,7 +32,7 @@ public class UserService {
         UserSessionBean userSessionBean = new UserSessionBean();
         userSessionBean.setFirstName(user.getFirstName());
         userSessionBean.setLastName(user.getLastName());
-        userSessionBean.setUserID(user.geteMail());
+        userSessionBean.setEMail(user.geteMail());
         return userSessionBean;
     }
 }

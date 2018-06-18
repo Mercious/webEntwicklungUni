@@ -2,17 +2,23 @@
 
 <header>
     <div class="container orange">
-        <div id="header-menu">
-            <h1>PC-Store</h1>
+        <div class="leftNav">
+            <c:if test="${not empty currentUser}">
+                <img src="WebContent/png/userIcon.png" class="left"/>
+                <div class="inlineBlock headerUserName left">${currentUser.firstName},<br>${currentUser.lastName}</div>
+            </c:if>
+            <form action="/shop/search" method="get">
+                <input type="text" class="searchBar" placeholder="Suchebegriff eingeben ..." name="searchTerm"/>
+                <input type="submit" style="display:none"/>
+            </form>
         </div>
         <nav>
             <ul>
                 <li><a href="/shop/">Startseite</a></li>
                 <li><a href="xxxxx">PC-Konfigurator</a></li>
                 <li><a href="contact">Kontakt</a></li>
-                <c:if test="${not headerBean.userLoggedIn}">
-                    <li><a href="loginRegister">Registrieren</a></li>
-                    <li><a href="loginRegister">Anmelden</a></li>
+                <c:if test="${empty currentUser}">
+                    <li><a href="loginRegister">Registrieren/Login</a></li>
                 </c:if>
             </ul>
         </nav>
