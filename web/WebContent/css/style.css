@@ -279,3 +279,43 @@ header form {
 .leftNav {
   float: left;
 }
+
+.logoutButton {
+  width: 100px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 20px;
+}
+
+.configSlot {
+  height: 270px;
+  width: 200px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
+  float: left;
+  vertical-align: top;
+  position: relative;
+}
+
+.configHeadline {
+  height: 30px;
+  width: 100%;
+  padding-top: 3px;
+  background: grey;
+  text-align: center;
+  font-weight: bold;
+}
+
+.configAddPicture {
+  text-align: center;
+  vertical-align: center;
+  margin-left: 75px;
+  margin-top: 50px;
+}
+
+.configAddClaim {
+  text-align: center;
+  width: 100%;
+  height: 10px;
+}

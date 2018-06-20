@@ -4,8 +4,11 @@
     <div class="container orange">
         <div class="leftNav">
             <c:if test="${not empty currentUser}">
-                <img src="WebContent/png/userIcon.png" class="left"/>
-                <div class="inlineBlock headerUserName left">${currentUser.firstName},<br>${currentUser.lastName}</div>
+                <form action="/shop/logout" method="post">
+                    <img src="WebContent/png/userIcon.png" class="left"/>
+                    <div class="inlineBlock headerUserName left">${currentUser.firstName},<br>${currentUser.lastName}</div>
+                    <input type="submit" id="logoutButton" class="logoutButton inlineBlock left" value="Ausloggen"/>
+                </form>
             </c:if>
             <form action="/shop/search" method="get">
                 <input type="text" class="searchBar" placeholder="Suchebegriff eingeben ..." name="searchTerm"/>

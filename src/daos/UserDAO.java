@@ -19,7 +19,7 @@ public class UserDAO extends AbstractBaseDAO {
         Connection connection = null;
         try {
             connection = dataSource.getConnection();
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM kunden WHERE Email=?");
+            PreparedStatement statement = connection.prepareStatement("SELECT * FROM customer WHERE Email=?");
             statement.setString(1, userID);
             ResultSet results = statement.executeQuery();
             if (results.next()) {
@@ -39,7 +39,7 @@ public class UserDAO extends AbstractBaseDAO {
         Connection connection = null;
         try {
             connection = dataSource.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM kunden WHERE Email = ?");
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customer WHERE Email = ?");
             preparedStatement.setString(1, userID);
             ResultSet resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
@@ -66,7 +66,7 @@ public class UserDAO extends AbstractBaseDAO {
         Connection connection = null;
         try {
             connection = this.dataSource.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO kunden (Email, Vorname, Nachname, Passwort)" +
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO customer (Email, Vorname, Nachname, Passwort)" +
                     "VALUES (?, ?, ?, ?)");
             preparedStatement.setString(1, eMail);
             preparedStatement.setString(2, firstName);

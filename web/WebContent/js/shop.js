@@ -29,14 +29,19 @@ function displayRegisterForm() {
 }
 
 window.onload = function() {
-    var statusIcons = document.querySelectorAll("[id^='statusIcon']");
-    for (var i = 0; i < statusIcons.length; i++) {
-        statusIcons[i].addEventListener('mouseenter', revealLightbox);
-        statusIcons[i].addEventListener('mouseleave', hideLightbox)
+    if (document.title === "Home") {
+        var statusIcons = document.querySelectorAll("[id^='statusIcon']");
+        for (var i = 0; i < statusIcons.length; i++) {
+            statusIcons[i].addEventListener('mouseenter', revealLightbox);
+            statusIcons[i].addEventListener('mouseleave', hideLightbox)
+        }
+
+        var logoutButton = document.getElementById("logoutButton");
     }
 
-    if(document.title === "Login/Registrierung") {
+    else if(document.title === "Login/Registrierung") {
         var beginRegisterButton = document.getElementById("beginRegisterButton");
         beginRegisterButton.addEventListener("click", displayRegisterForm)
     }
+
 }

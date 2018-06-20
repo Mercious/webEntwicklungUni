@@ -5,7 +5,7 @@
     </div>
     <div class="container white">
         <h2 class="orangeText">Login / Registrierung</h2>
-        Hier können Sie sich entweder mit Ihren bereits vorhandenen Kundendaten einloggen oder kostenlos einen neuen Account anlegen!
+        <div>Hier können Sie sich entweder mit Ihren bereits vorhandenen Kundendaten einloggen oder kostenlos einen neuen Account anlegen!</div>
 
         <div id="loginArea" class="loginRegisterTeaser">
             <h3>Ich bin bereits Kunde!</h3>
