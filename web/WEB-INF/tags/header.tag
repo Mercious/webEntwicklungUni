@@ -18,7 +18,7 @@
         <nav>
             <ul>
                 <li><a href="/shop/">Startseite</a></li>
-                <li><a href="xxxxx">PC-Konfigurator</a></li>
+                <li><a href="configurator">PC-Konfigurator</a></li>
                 <li><a href="contact">Kontakt</a></li>
                 <c:if test="${empty currentUser}">
                     <li><a href="loginRegister">Registrieren/Login</a></li>

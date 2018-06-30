@@ -5,17 +5,17 @@
     <div class="container">
         <div class="headline">Ihre aktuelle Konfiguration</div>
 
-        <custom:configSlot slotID="mainboard" slotHeadline="Mainboard"></custom:configSlot>
+        <custom:configSlot slotID="mainboard" slotHeadline="Mainboard" type="Mainboard"></custom:configSlot>
 
-        <custom:configSlot slotID="cpu" slotHeadline="CPU (Prozessor)"></custom:configSlot>
+        <custom:configSlot slotID="cpu" slotHeadline="CPU (Prozessor)" type="CPU"></custom:configSlot>
 
-        <custom:configSlot slotID="gpu" slotHeadline="GPU (Grafikkarte)"></custom:configSlot>
+        <custom:configSlot slotID="gpu" slotHeadline="GPU (Grafikkarte)" type="GPU"></custom:configSlot>
 
-        <custom:configSlot slotID="ram" slotHeadline="RAM (Arbeitsspeicher)"></custom:configSlot>
+        <custom:configSlot slotID="ram" slotHeadline="RAM (Arbeitsspeicher)" type="RAM"></custom:configSlot>
 
-        <custom:configSlot slotID="psu" slotHeadline="PSU (Netzzeil)"></custom:configSlot>
+        <custom:configSlot slotID="psu" slotHeadline="PSU (Netzzeil)" type="PSU"></custom:configSlot>
 
-        <custom:configSlot slotID="case" slotHeadline="Case (Gehäuse)"></custom:configSlot>
+        <custom:configSlot slotID="case" slotHeadline="Case (Gehäuse)" type="Gehäuse"></custom:configSlot>
 
     </div>
 </custom:pageWithFooterHeader>
