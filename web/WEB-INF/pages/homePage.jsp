@@ -1,4 +1,6 @@
 
+<!-- Autor: Serkan Altay -->
+
 <!DOCTYPE html>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib prefix="custom" tagdir="/WEB-INF/tags" %>
@@ -22,7 +24,7 @@
 		<div class="container headline">Unsere Empfehlungen</div>
 	<div class="container">
 	<c:forEach items="${articleTeaserList}" var="article">
-		<custom:articleTeaser articleName="${article.articleName}" articleID="${article.articleID}" articlePrice="${article.price}"/>
+		<custom:articleTeaser articleName="${article.articleName}" articleID="${article.articleID}" articlePrice="${article.price}" compStatus="${article.compatibilityStatus}"/>
 	</c:forEach>
 	</div>
 	</section>

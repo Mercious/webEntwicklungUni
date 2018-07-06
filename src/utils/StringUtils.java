@@ -6,6 +6,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.security.spec.KeySpec;
 
+// Autor: Felix Hartmann
 public class StringUtils {
     public static boolean isNotEmptyOrNull(final String s) {
         return s != null && !s.isEmpty();

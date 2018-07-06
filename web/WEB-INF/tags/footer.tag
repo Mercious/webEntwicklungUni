@@ -1,3 +1,4 @@
+<!-- Autor: Serkan Altay -->
 <footer>
     <p>PC-Store, Copyright &copy; 2017</p>
 

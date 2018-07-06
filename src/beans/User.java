@@ -2,6 +2,7 @@ package beans;
 
 import java.io.Serializable;
 
+// Autor: Serkan Altay
 public class User implements Serializable {
     private String eMail;
     private String firstName;

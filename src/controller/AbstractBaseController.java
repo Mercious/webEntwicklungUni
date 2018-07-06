@@ -15,6 +15,7 @@ import java.util.Collection;
 import java.util.List;
 
 
+// Autor: Felix Hartmann
 public abstract class AbstractBaseController extends HttpServlet {
     public void writeViewContentToResponse(String viewName, HttpServletResponse response) throws IOException {
         Path filePath = Paths.get(new File(getServletContext().getRealPath("WEB-INF/" + viewName)).toURI());
@@ -32,5 +33,13 @@ public abstract class AbstractBaseController extends HttpServlet {
 
     protected void addErrorMessages(final HttpServletRequest request, List<String> messages) {
         request.setAttribute("errorMessages", messages);
+    }
+
+    protected void addSuccessMessage (final HttpServletRequest request, String... messages) {
+        request.setAttribute("successMessages", Arrays.asList(messages));
+    }
+
+    protected void addSuccessMessages(final HttpServletRequest request, List<String> messages) {
+        request.setAttribute("succesMessages", messages);
     }
 }

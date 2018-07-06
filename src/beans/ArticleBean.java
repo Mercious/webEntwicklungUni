@@ -2,6 +2,7 @@ package beans;
 
 import java.io.Serializable;
 
+// Autor: Felix Hartmann
 public class ArticleBean implements Serializable {
     public ArticleBean(final String articleName, final String articleID, final double price) {
         this.articleName = articleName;
@@ -25,6 +26,7 @@ public class ArticleBean implements Serializable {
     private String CPU_Slot;
     private String GPU_Slot;
     private String RAM_Slot;
+    private boolean compatibilityStatus = true;
 
     public String getArticleName() {
         return articleName;
@@ -80,5 +82,13 @@ public class ArticleBean implements Serializable {
 
     public void setRAM_Slot(String RAM_Slot) {
         this.RAM_Slot = RAM_Slot;
+    }
+
+    public boolean isCompatibilityStatus() {
+        return compatibilityStatus;
+    }
+
+    public void setCompatibilityStatus(boolean compatibilityStatus) {
+        this.compatibilityStatus = compatibilityStatus;
     }
 }

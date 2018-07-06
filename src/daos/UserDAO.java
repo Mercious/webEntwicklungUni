@@ -10,6 +10,8 @@ import javax.inject.Inject;
 import javax.sql.DataSource;
 import java.sql.*;
 
+
+// Autor: Serkan Altay
 @Stateless
 public class UserDAO extends AbstractBaseDAO {
     @Resource(lookup = "jdbc/MyTHIPool")
@@ -48,7 +50,7 @@ public class UserDAO extends AbstractBaseDAO {
                 user.setFirstName(resultSet.getString("Vorname"));
                 user.setLastName(resultSet.getString("Nachname"));
                 user.seteMail(resultSet.getString("Email"));
-                // ...
+                user.setUserRole(resultSet.getString("Rolle"));
                 return user;
             } else {
                 return null;

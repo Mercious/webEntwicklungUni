@@ -1,7 +1,9 @@
+<!-- Autor: Serkan Altay -->
+
 <%@taglib prefix="custom" tagdir="/WEB-INF/tags" %>
 <custom:pageWithFooterHeader pageTitle="Login/Registrierung">
     <div class="container">
-        <custom:errorMessages/>
+        <custom:messages/>
     </div>
     <div class="container white">
         <h2 class="orangeText">Login / Registrierung</h2>
@@ -12,9 +14,9 @@
             <div class="loginboxText greyText">Dann geben melden Sie sich bitte mit ihren Login-Daten hier an:</div>
             <form id="loginform" action="/shop/loginRegister" method="post">
                 <label for="eMail">E-Mail Adresse:</label>
-                <input id="eMail" name="eMail" required pattern=".{4,}"/>
+                <input id="eMail" name="eMail" required/>
                 <label for="password">Passwort:</label>
-                <input id="password" name="password" type="password" required pattern=".{6,}"/>
+                <input id="password" name="password" type="password" required/>
                 <button type="submit">Anmelden</button>
             </form>
         </div>

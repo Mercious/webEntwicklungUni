@@ -1,3 +1,4 @@
+<!-- Autor: Serkan Altay -->
 <%@tag description="Generic Page that has header and footer" pageEncoding="UTF-8"%>
 <%@taglib prefix="custom" tagdir="/WEB-INF/tags" %>
 <%@ attribute name="pageTitle" required="true" type="java.lang.String" %>
@@ -10,7 +11,6 @@
         <meta name="keywords" content="PC-Store">
         <meta name="author" content="Serkan Altay, Felix Hartmann">
         <title>${pageTitle}</title>
-        <title>PC-Store</title>
         <link rel="stylesheet" type="text/css" href="WebContent/css/style.css">
     </head>
     <body>

@@ -1,5 +1,5 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="shop">
+  <artifact type="exploded-ear" name="shop">
     <output-path>$PROJECT_DIR$/out/artifacts/shop</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="serkanGlassfishTest/web/Web" />
@@ -8,6 +8,7 @@
           <element id="module-output" name="serkanGlassfishTest" />
         </element>
       </element>
+      <element id="dir-copy" path="$PROJECT_DIR$/src" />
     </root>
   </artifact>
 </component>

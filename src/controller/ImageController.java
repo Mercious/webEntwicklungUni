@@ -1,6 +1,7 @@
 package controller;
 
 import services.ArticleService;
+import utils.StringUtils;
 
 import javax.imageio.ImageIO;
 import javax.inject.Inject;
@@ -11,6 +12,7 @@ import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
 import java.io.IOException;
 
+// Autor: Felix Hartmann
 @WebServlet("/image")
 public class ImageController extends AbstractBaseController {
     @Inject
@@ -18,28 +20,22 @@ public class ImageController extends AbstractBaseController {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) {
         final String articleID = request.getParameter("articleID");
+        if (!StringUtils.isNotEmptyOrNull(articleID))
+            return;
         final boolean useTeaserScaling = Boolean.valueOf(request.getParameter("teaser"));
         response.setContentType("image/png");
-
+        int height, width;
         if (useTeaserScaling) {
-            BufferedImage imageDate = articleService.getTeaserImageForArticle(articleID);
-            try {
-                ImageIO.write(imageDate, "png", response.getOutputStream());
-            } catch (IOException e) {
-                // error handeling
-            }
+            height = width = 150;
         } else {
-            BufferedInputStream imageData = articleService.getImageForArticle(articleID);
-            byte buffer[] = new byte[1024];
-            int read = 0;
-            try  {
-                while( (read = imageData.read(buffer, 0, buffer.length)) != -1 ) {
-                    response.getOutputStream().write(buffer, 0, read);
-                }
-            } catch (IOException e) {
-                // error handling
-            }
+            height = width = 350;
+        }
 
+        BufferedImage imageDate = articleService.getImageForArticleWithDimensions(articleID, height, width);
+        try {
+            ImageIO.write(imageDate, "png", response.getOutputStream());
+        } catch (IOException e) {
+                // error handeling
         }
     }
 }

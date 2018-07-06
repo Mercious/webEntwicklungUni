@@ -11,8 +11,6 @@ public class MyApplication extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet h = new HashSet<Class<?>>();
-        // add classes here
-        // h.add(HomePageController.class);
         return h;
     }
 }

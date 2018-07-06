@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+// Autor: Felix Hartmann
 @WebServlet("/configurator")
 public class ConfiguratorController extends AbstractBaseController {
 
@@ -42,11 +43,11 @@ public class ConfiguratorController extends AbstractBaseController {
                 // set a new, empty configurator bean, which replaces the old one
                 currentSession.setAttribute("currentConfig", new ConfiguratorBean());
             } else {
-                final String articleToRemove = request.getParameter("articleID");
+                final String articleTypeToRemove = request.getParameter("type");
                 ConfiguratorBean currentConfig = (ConfiguratorBean) currentSession.getAttribute("currentConfig");
-                currentConfig.getItems().remove(articleToRemove);
+                currentConfig.getItems().remove(articleTypeToRemove);
             }
-            request.getRequestDispatcher("/WEB-INF/pages/myConfigurator.jsp").forward(request, response);
+            // request.getRequestDispatcher("/WEB-INF/pages/myConfigurator.jsp").forward(request, response);
             return;
         }
 
@@ -55,6 +56,10 @@ public class ConfiguratorController extends AbstractBaseController {
             final String articleID = request.getParameter("articleID");
             ArticleBean article = articleDAO.getArticle(articleID);
             ConfiguratorBean currentConfig = (ConfiguratorBean) currentSession.getAttribute("currentConfig");
+            if (currentConfig == null) {
+                currentConfig = new ConfiguratorBean();
+                currentSession.setAttribute("currentConfig", currentConfig);
+            }
             currentConfig.getItems().put(article.getType(), article);
         }
 

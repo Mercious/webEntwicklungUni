@@ -2,6 +2,7 @@ package beans;
 
 import java.io.Serializable;
 
+// Autor: Serkan Altay
 public class HeaderBean implements Serializable {
     private boolean userLoggedIn;
 

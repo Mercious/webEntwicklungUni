@@ -1,6 +1,8 @@
+<!-- Autor: Serkan Altay -->
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <header>
+    <noscript>Bitte aktivieren Sie JavaScript, diese Website funktioniert nur mit JavaScript!</noscript>
     <div class="container orange">
         <div class="leftNav">
             <c:if test="${not empty currentUser}">
@@ -22,6 +24,9 @@
                 <li><a href="contact">Kontakt</a></li>
                 <c:if test="${empty currentUser}">
                     <li><a href="loginRegister">Registrieren/Login</a></li>
+                </c:if>
+                <c:if test="${currentUser.userRole == 'Admin'}">
+                    <li><a href="adminArea">Produktpflege</a></li>
                 </c:if>
             </ul>
         </nav>

@@ -9,6 +9,7 @@ import javax.ejb.Stateless;
 import javax.inject.Inject;
 
 
+// Autor: Serkan Altay
 @Stateless
 public class UserService {
     @Inject
@@ -33,6 +34,7 @@ public class UserService {
         userSessionBean.setFirstName(user.getFirstName());
         userSessionBean.setLastName(user.getLastName());
         userSessionBean.setEMail(user.geteMail());
+        userSessionBean.setUserRole(user.getUserRole());
         return userSessionBean;
     }
 }

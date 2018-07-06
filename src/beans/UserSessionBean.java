@@ -2,10 +2,12 @@ package beans;
 
 import java.io.Serializable;
 
+// Autor: Felix Hartmann und Serkan Altay zu gleichen teilen
 public class UserSessionBean implements Serializable {
     private String eMail;
     private String firstName;
     private String lastName;
+    private String userRole;
 
     public UserSessionBean() {
         eMail = "";
@@ -41,5 +43,13 @@ public class UserSessionBean implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(String userRole) {
+        this.userRole = userRole;
     }
 }

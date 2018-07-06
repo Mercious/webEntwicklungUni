@@ -14,6 +14,7 @@ import javax.servlet.http.HttpSession;
 import javax.ws.rs.core.MediaType;
 import java.io.IOException;
 
+// Autor: Serkan Altay
 @WebServlet("/loginRegister")
 public class LoginController extends AbstractBaseController {
     @Inject

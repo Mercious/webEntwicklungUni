@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+// Autor: Serkan Altay
 @WebServlet("/register")
 public class RegisterController extends AbstractBaseController {
 
